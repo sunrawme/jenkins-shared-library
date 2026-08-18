@@ -13,7 +13,7 @@ def call(String Project, String ImageTag, String dockerhubuser) {
                 -u "\$dockerHubUser" \
                 --password-stdin
 
-            docker tag ${Project}:latest \
+            docker tag ${Project}:${ImageTag} \
                 ${dockerhubuser}/${Project}:${ImageTag}
 
             docker push \
